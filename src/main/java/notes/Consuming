@@ -1,0 +1,31 @@
+CONSUMING A RESTFUL WEB SERVICE
+
+    - Fetching a REST resource: It randomly fetches quotations about Spring Boot
+    and returns them as JSON documents.
+
+    - RestTemplate makes interacting with most RESTful services a one-line incantation.
+    And it can even bind that data to custom domain types.
+    - aka RestTemplate is used to make HTTP Rest Calls (REST Client).
+
+    @JsonIgnoreProperties from the Jackson JSON processing library to indicate that any properties not bound in this type should be ignored.
+
+   - To directly bind your data to your custom types, you need to specify the variable name to be exactly the same as
+    the key in the JSON document returned from the API. In case your variable name and key in JSON doc do not match,
+    you can use @JsonProperty annotation to specify the exact key of the JSON document.
+
+    IN ConsumingRestApp you need:
+
+        - logger, to send output to the log (the console, in this example).
+
+        - RestTemplate, which uses the Jackson JSON processing library to process the incoming data.
+
+        - CommandLineRunner that runs the RestTemplate (and, consequently, fetches our quotation) on startup.
+
+    BEANS
+    - JavaBeans are Java classes which adhere to an extremely simple coding convention
+
+    They must:
+
+    - implement java.io.Serializable interface: to save the state of an object
+    - use a public empty argument constructor: to instantiate the object
+    - provide public getter/setter methods:  to get and set the values of private variables/properties.
